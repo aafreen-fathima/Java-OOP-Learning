@@ -1,0 +1,114 @@
+1. Class
+
+Blueprint or template for objects.
+Defines attributes (what it has) and methods (what it can do).
+
+2. Object
+
+Real instance of a class.
+Each object has its own copy of attributes.
+
+3. Instance Variable / Attribute
+
+Variables inside a class, representing the state of an object.
+Each object has its own copy.
+
+4. Parameter
+
+Value passed to a method or constructor.
+Temporary, exists only during the call.
+
+5. Constructor
+
+Special method to initialize an object.
+Same name as the class, no return type.
+Can be default (no input) or parameterized (custom input).
+
+6. Method
+
+Defines behavior or actions an object can perform.
+Can have any name and return type.
+
+7. Driver Class
+
+Contains the main program.
+Creates objects and calls methods to perform actions.
+
+8. Key Points
+
+Class = blueprint, Object = actual thing
+Constructor = sets attributes, Method = performs actions
+Use this to distinguish object attributes from parameters
+
+Copy Constructor (OOP Short Notes)
+1. Definition
+
+A special constructor used to create a new object as a copy of an existing object.
+Duplicates the attributes of an existing object into a new one.
+
+2. Purpose
+
+To clone an object with the same state.
+Avoids manual assignment of attributes.
+Ensures the original object remains unchanged if desired.
+
+3. Key Points
+
+Takes an object of the same class as a parameter.
+Creates a new object.
+Can perform:
+Shallow copy → copies primitive data, references point to same objects
+Deep copy → copies everything, including separate copies of reference objects
+
+4. When to Use
+
+Cloning objects.
+Passing objects by value to functions.
+Returning objects from functions.
+Avoiding repetitive code when creating similar objects.
+
+🔹 1️⃣ What is a Getter?
+Getter (also called an accessor) is a method used to read or access the value of a private attribute.
+Naming convention: getAttributeName()
+Purpose: Allows controlled access to a private variable.
+
+What is a Setter?
+Setter (also called a mutator) is a method used to change or set the value of a private attribute.
+Naming convention: setAttributeName(value)
+Purpose: Allows controlled modification of a private variable.
+
+Why Use Getters and Setters?
+
+Encapsulation: Keeps attributes private and secure.
+Validation: You can check values before setting them (e.g., doors cannot be negative).
+Flexibility: Can change implementation later without affecting other code.
+
+// private int numOfDoors;  // private
+   // Outside this class, can't do car.numOfDoors = 4
+   // Must use setter: car.setNumOfDoors(4)
+
+   public int numOfDoors;  // public
+   car.numOfDoors = 4;    // direct access
+   int doors = car.numOfDoors; // direct read
+
+   Modifier	Where Accessible	Use Case
+   private	Only inside the same class	Use getters/setters to access outside
+   protected	Same class, subclasses, and same package	Useful for inheritance when derived classes need direct access
+   public	Anywhere	Accessible from any class — not safe for encapsulation
+
+
+   // ToString()
+   Components:
+   public	Must be public because Object.toString() is public.
+   String	The method returns a String representing the object.
+   toString()	The exact name of the method in Object class.
+   { ... }	The code that returns the string representation.
+
+
+    1. Method Overloading
+
+    Definition:
+    Method overloading occurs when multiple methods in the same class have the same name but different parameter lists.
+    It is resolved at compile time.
+    This is called compile-time polymorphism.
+
