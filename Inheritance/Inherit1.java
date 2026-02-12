@@ -5,6 +5,8 @@ package Inheritance;
 // Use of default constructor
 //Base class
 
+import java.util.Scanner;
+
 class Vehicle {
     // Private Attributes
     /* Attributes → usually private
@@ -73,7 +75,7 @@ Good for basic objects	Good for real systems */
         return price;
     }
 
-    public void setPrice(double pr) {
+    final public void setPrice(double pr) {
         price = pr;
     }
     // Every class in Java inherits toString() from Object class.
@@ -117,8 +119,32 @@ class bus extends Vehicle {
     public String toString() {
         return "This Vehicle has " + passengercapacity + "$";
     }
-}
+    // Overriding the SetPrice() method /* Will become invalid becoz of final
+//    public void setPrice(double pr) {
+//        if(pr< getPrice())
+//            System.out.println("The price of this bus will be reduced from"+ getPrice() + "$ to "+pr+ "$.");
+//        else if (pr > getPrice())
+//            System.out.println(" The price of this bus will be increased from"+ getPrice() + "$ to "+pr+ "$.");
+//        else
+//            System.out.println(" No change will be applied to this price of the bus");
+//        super.setPrice(pr);
+//
+//    }
+    public void setPrice() {
+        Scanner  sc = new Scanner(System.in);
+        double pr;
+        System.out.println(" Please enter the price of the bus");
+        pr=sc.nextDouble();
+       if(pr< getPrice())
+           System.out.println("The price of this bus will be reduced from"+ getPrice() + "$ to "+pr+ "$.");
+        else if (pr > getPrice())
+            System.out.println(" The price of this bus will be increased from"+ getPrice() + "$ to "+pr+ "$.");
+        else
+           System.out.println(" No change will be applied to this price of the bus");
+        super.setPrice(pr);
+    }
 
+}
 // Driver code
 
 public class Inherit1 {

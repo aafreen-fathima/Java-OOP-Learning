@@ -9,3 +9,4 @@ This repository tracks my progress in learning Java OOP.
 - super keyword
 - Overloading
 - Overriding
+- Use override only if you want to replace parent behavior. Use super if you want child + parent behavior together.

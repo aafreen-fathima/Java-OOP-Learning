@@ -112,3 +112,33 @@ Flexibility: Can change implementation later without affecting other code.
     It is resolved at compile time.
     This is called compile-time polymorphism.
 
+3 Main Uses of super
+super(...) → call parent constructor
+super.method() → call parent method
+super.variable → access parent variable (if not private)
+
+final method → cannot be overridden
+final class → cannot be extended
+final variable → cannot be changed after assignment
+Think of visibility like doors:
+
+private → very closed
+protected → semi-open
+public → fully open
+You’re allowed to open the door more.
+You’re not allowed to close it more.
+
+private methods cannot be overridden.
+final methods cannot be overridden.
+public and protected methods can be overridden.
+Access level in child cannot be more restrictive than parent.
+
+Final:
+Must be initialized either at declaration or in the constructor.
+Makes your code safer because the value can’t change unexpectedly.
+Final Variable: Value cannot change; must be initialized.
+Final Method: Cannot be overridden by subclasses.
+Final Class: Cannot be extended/inherited.
+Final Parameter: Cannot be reassigned in the method.
+Final + Static: Compile-time constant.
+Key Idea: final = unchangeable, immutable, secure.
