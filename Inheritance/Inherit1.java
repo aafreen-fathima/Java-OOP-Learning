@@ -107,6 +107,18 @@ class bus extends Vehicle {
         System.out.print("creating a bus object using copy constructor");
         passengercapacity = b.passengercapacity;
     }
+    // A Constructor that would allow the setting of the price and number of the doors
+    // and the passenger capacity
+    public Bus(int nd,double pr,int pc)
+    {
+        this(pc); // calling the constructor that sets the value of the passenger capacity
+        System.out.print("creating a bus object using parameterized constructor for full settings");
+        // we cannot call supertto set the other two attributes
+        // we cannot call super() and this() in the same thing, either of them should be in the first
+        // statement and it is not possible to have both of them as such
+        setPrice(pr);
+        setNumofDoors(nd);
+    }
 
     // Getters and Setters
     public int getPassengercapacity() {
@@ -150,8 +162,8 @@ class bus extends Vehicle {
 public class Inherit1 {
     public static void main(String[] args) {
         System.out.println(" Will create two vehicle object");
-        Vehicle v1=new Vehicle();
-        Vehicle v2= new Vehicle(4,5000);
+        Vehicle v1=new Vehicle(); // Calls the default constructor Prints whats inside the default constructor
+        Vehicle v2= new Vehicle(4,5000); // calls the parameterized constructor and prints that
         System.out.println();
         System.out.println("Will create three bus object");
         bus b1=new bus(1);
