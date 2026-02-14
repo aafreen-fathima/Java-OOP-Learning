@@ -84,6 +84,7 @@ Good for basic objects	Good for real systems */
     public String toString() {
         return "This Vehicle has " + NumofDoors + " doors and " + price + "$";
     }
+
 } // End of vehicle class
 
 // Bus class - this is an derived class which inherits vehicle class
@@ -109,16 +110,16 @@ class bus extends Vehicle {
     }
     // A Constructor that would allow the setting of the price and number of the doors
     // and the passenger capacity
-    public Bus(int nd,double pr,int pc)
-    {
-        this(pc); // calling the constructor that sets the value of the passenger capacity
-        System.out.print("creating a bus object using parameterized constructor for full settings");
-        // we cannot call supertto set the other two attributes
-        // we cannot call super() and this() in the same thing, either of them should be in the first
-        // statement and it is not possible to have both of them as such
-        setPrice(pr);
-        setNumofDoors(nd);
-    }
+//    public Bus(int nd,double pr,int pc)
+//    {
+//        this(pc); // calling the constructor that sets the value of the passenger capacity
+//        System.out.print("creating a bus object using parameterized constructor for full settings");
+//        // we cannot call supertto set the other two attributes
+//        // we cannot call super() and this() in the same thing, either of them should be in the first
+//        // statement and it is not possible to have both of them as such
+//        setPrice(pr);
+//        setNumofDoors(nd);
+//    }
 
     // Getters and Setters
     public int getPassengercapacity() {
@@ -157,6 +158,110 @@ class bus extends Vehicle {
     }
 
 }
+// Car class - this is a derived class from the vehicle class
+// for a car object, we are interested in its number of costs
+class car extends Vehicle {
+    // Attributes
+    private int numofSeats;
+    // constructor
+    public car() {
+        System.out.print("creating a Car object using default constructor");
+        numofSeats = 4;
+    }
+    // paraterized constructor
+    public car(int nd, double pr,int ns) {
+        super(nd, pr);
+        System.out.print("creating a Car object using parameterized constructor");
+        numofSeats = ns;
+    }
+    public car(car c) {
+        System.out.print("creating a Car object using copy constructor");
+        setNumofDoors(c.getNumofDoors()); // Getting the value from the previous constructor and setting the numofDoors
+        setPrice(c.getPrice()); // Getting the value from the prevous constructor and setting of the price
+        numofSeats = c.numofSeats;
+    }
+    public int getNumofSeats() {
+        return numofSeats;
+    }
+    public void setNumofSeats(int ns) {
+        numofSeats = ns;
+    }
+    public String toString() {
+        return "This car has " +getNumofSeats() + " doors and its price is: " + getPrice() + "$. This number of seats of this car is" +numofSeats;
+    }
+} // End of car class
+// sports car- this is the derived class from the car class
+class Sportcar extends car {
+    // Attributes
+    private double gasConsumption;
+    // default constructor
+    public Sportcar() {
+        System.out.print("creating a Sportcar object using default constructor");
+        gasConsumption = 4;
+    }
+    // parameterized constructor
+    public Sportcar(int nd,double pr, int ns,double gc) {
+        super(nd, pr, ns);
+        System.out.print("creating a Sportcar object using parameterized constructor");
+        gasConsumption = gc;
+    }
+    // copy constructor
+    public Sportcar(Sportcar sc) {
+        System.out.print("creating a Sportcar object using copy constructor");
+        setNumofDoors(sc.getNumofDoors());
+        setPrice(sc.getPrice());
+        setNumofSeats(sc.getNumofSeats());
+        gasConsumption = sc.gasConsumption;
+    }
+    public double getGasConsumption() {
+        return gasConsumption;
+    }
+    public void setGasConsumption(double gc) {
+        gasConsumption = gc;
+    }
+    public String toString() {
+        return "This Sport Car has " + getNumofDoors() + " doors and its price is: " + getPrice() +
+                "$. The number of seats of this Sport Car is " + getNumofSeats() +
+                "\nand its gas consumption is " + gasConsumption + " gallons/100-mile.";
+    }
+} // end of sports car
+
+//Race car class
+class Racecar extends Sportcar {
+    private int horsepower;
+    // Constructor
+    public Racecar() {
+        System.out.print("creating a Racecar object using default constructor");
+        horsepower = 400;
+    }
+    // parameterized constructor
+    public Racecar(int nd, double pr, int ns, double gc, int hp) {
+        super(nd, pr, ns);
+        System.out.print("creating a Racecar object using parameterized constructor");
+        horsepower = hp;
+    }
+    public Racecar(Racecar r) {
+        System.out.print("creating a Racecar object using copy constructor");
+        setNumofDoors(r.getNumofDoors());
+        setPrice(r.getPrice());
+        setNumofSeats(r.getNumofSeats());
+        setGasConsumption(r.getGasConsumption());
+        horsepower = r.horsepower;
+
+    }
+    public int getHorsepower() {
+        return horsepower;
+    }
+    public void setHorsepower(int hp) {
+        horsepower = hp;
+    }
+    public String toString() {
+        return "This Race Car has " + getNumofDoors() + " doors and its price is: " + getPrice() +
+                "$. The number of seats of this Race Car is " + getNumofSeats() +
+                "\nand its gas consumption is " + getGasConsumption() + " gallons/100-mile." +
+                "The horse power of this Race Car is: " + horsepower + ".";
+    }
+} // end of race car class
 // Driver code
 
 public class Inherit1 {
