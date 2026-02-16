@@ -142,3 +142,27 @@ Final Class: Cannot be extended/inherited.
 Final Parameter: Cannot be reassigned in the method.
 Final + Static: Compile-time constant.
 Key Idea: final = unchangeable, immutable, secure.
+
+🔹 Polymorphism – Short Notes
+🔵 What is Happening?
+A method that accepts a parent class type (Vehicle) can receive:
+Vehicle objects
+Any subclass objects (Bus, Car, Sportcar, Racecar, etc.)
+This is possible because of inheritance.
+🔵 Upcasting
+When a child object is passed as a parent type parameter, it is called upcasting.
+The method treats the object as a Vehicle, even if it is actually a Bus or Sportcar.
+🔵 Runtime Polymorphism (Dynamic Binding)
+Even though the parameter type is Vehicle,
+Java calls the method that belongs to the actual object type at runtime.
+So:
+If the object is a Bus → Bus version runs
+If the object is a Sportcar → Sportcar version runs
+The decision is made at runtime, not compile time.
+
+
+🔵 Key Concepts Summary
+Parent reference can hold child objects
+Method overriding enables different behavior
+Actual object type determines which method runs
+This behavior is called polymorphism

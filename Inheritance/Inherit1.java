@@ -265,6 +265,7 @@ class Racecar extends Sportcar {
 // Driver code
 
 public class Inherit1 {
+
     public static void main(String[] args) {
         System.out.println(" Will create two vehicle object");
         Vehicle v1=new Vehicle(); // Calls the default constructor Prints whats inside the default constructor
